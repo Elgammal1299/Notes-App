@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CearchIconAppBar extends StatelessWidget {
-  const CearchIconAppBar({
+class customIconAppBar extends StatelessWidget {
+  final IconData icon;
+  const customIconAppBar({
     super.key,
+    required this.icon,
   });
 
   @override
@@ -17,8 +19,8 @@ class CearchIconAppBar extends StatelessWidget {
       child: Center(
         child: IconButton(
           onPressed: () {},
-          icon: const Icon(
-            Icons.search,
+          icon: Icon(
+            icon,
             size: 28,
           ),
         ),

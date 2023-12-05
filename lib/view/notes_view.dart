@@ -18,7 +18,7 @@ class NotesView extends StatelessWidget {
           ),
         ),
         actions: const [
-          CearchIconAppBar(),
+          customIconAppBar(icon: Icons.search),
         ],
       ),
       body: const NotesViewBody(),
