@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key});
-
+  const CustomTextFormField(
+      {super.key, required this.labelText, this.maxLine = 1});
+  final String labelText;
+  final int maxLine;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLine,
       cursorColor: kPrinaryColor,
       decoration: InputDecoration(
-        label: const Text('Title'),
+        label: Text(labelText),
         border: buildBorder(),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(kPrinaryColor),

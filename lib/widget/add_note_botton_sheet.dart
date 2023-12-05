@@ -10,11 +10,14 @@ class AppNoteBottonSheet extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       child: Column(
         children: [
-          CustomTextFormField(),
+          SizedBox(
+            height: 32,
+          ),
+          CustomTextFormField(labelText: 'Titel'),
           SizedBox(
             height: 20,
           ),
-          CustomTextFormField(),
+          CustomTextFormField(labelText: "Content", maxLine: 5),
         ],
       ),
     );
