@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/add_note_botton_sheet.dart';
 import 'package:flutter_application_1/widget/cearch_icon_appbar.dart';
 import 'package:flutter_application_1/widget/notes_view_body.dart';
 
@@ -22,7 +23,13 @@ class NotesView extends StatelessWidget {
       ),
       body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return const AppNoteBottonSheet();
+              });
+        },
         child: const Icon(Icons.add),
       ),
     );
