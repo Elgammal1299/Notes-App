@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/cearch_icon_appbar.dart';
 import 'package:flutter_application_1/widget/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -8,9 +9,22 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 12),
-          child: const NotesViewBody()),
+      appBar: AppBar(
+        title: const Text(
+          'Notes',
+          style: TextStyle(
+            fontSize: 28,
+          ),
+        ),
+        actions: const [
+          CearchIconAppBar(),
+        ],
+      ),
+      body: const NotesViewBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
