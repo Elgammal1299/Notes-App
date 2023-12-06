@@ -1,8 +1,16 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-class NoteModel {
+import 'package:hive/hive.dart';
+
+part 'note_model.g.dart';
+
+@HiveType(typeId: 0)
+class NoteModel extends HiveObject {
+  @HiveField(0)
   final String titel;
+  @HiveField(1)
   final String supTitel;
+  @HiveField(2)
   final String data;
+  @HiveField(3)
   final int color;
 
   NoteModel({
