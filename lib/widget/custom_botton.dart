@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 
 class CustomBottom extends StatelessWidget {
+  final void Function()? onPressed;
   const CustomBottom({
     super.key,
+    this.onPressed,
   });
 
   @override
@@ -18,7 +20,7 @@ class CustomBottom extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: const Text(
           'Add',
           style: TextStyle(

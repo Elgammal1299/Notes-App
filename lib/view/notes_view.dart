@@ -18,25 +18,29 @@ class NotesView extends StatelessWidget {
           ),
         ),
         actions: const [
-          customIconAppBar(icon: Icons.search),
+          CustomIconAppBar(icon: Icons.search),
         ],
       ),
       body: const NotesViewBody(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showModalBottomSheet(
-              // isScrollControlled: true,
+      floatingActionButton: floatingActionButton(context),
+    );
+  }
 
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              context: context,
-              builder: (context) {
-                return const AppNoteBottonSheet();
-              });
-        },
-        child: const Icon(Icons.add),
-      ),
+  FloatingActionButton floatingActionButton(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        showModalBottomSheet(
+            // isScrollControlled: true,
+
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            context: context,
+            builder: (context) {
+              return const AppNoteBottonSheet();
+            });
+      },
+      child: const Icon(Icons.add),
     );
   }
 }

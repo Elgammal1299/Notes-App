@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class customIconAppBar extends StatelessWidget {
+class CustomIconAppBar extends StatelessWidget {
   final IconData icon;
-  const customIconAppBar({
+  const CustomIconAppBar({
     super.key,
     required this.icon,
   });

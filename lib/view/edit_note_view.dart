@@ -12,7 +12,7 @@ class EditNoteView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: const [
-          customIconAppBar(icon: Icons.check),
+          CustomIconAppBar(icon: Icons.check),
         ],
         title: const Text(
           'Edit Note',
