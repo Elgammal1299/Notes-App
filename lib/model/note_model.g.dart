@@ -18,8 +18,8 @@ class NoteModelAdapter extends TypeAdapter<NoteModel> {
     };
     return NoteModel(
       data: fields[2] as String,
-      titel: fields[0] as String,
-      supTitel: fields[1] as String,
+      title: fields[0] as String,
+      supTitle: fields[1] as String,
       color: fields[3] as int,
     );
   }
@@ -29,9 +29,9 @@ class NoteModelAdapter extends TypeAdapter<NoteModel> {
     writer
       ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.titel)
+      ..write(obj.title)
       ..writeByte(1)
-      ..write(obj.supTitel)
+      ..write(obj.supTitle)
       ..writeByte(2)
       ..write(obj.data)
       ..writeByte(3)

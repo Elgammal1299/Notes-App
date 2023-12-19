@@ -9,7 +9,8 @@ class AppNoteBottonSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
       child: Padding(
         // height: MediaQuery.of(context).size.height * .7,
         padding: const EdgeInsets.all(8.0),
@@ -25,7 +26,7 @@ class AppNoteBottonSheet extends StatelessWidget {
           builder: (context, state) {
             return ModalProgressHUD(
               inAsyncCall: state is AddNoteLoading ? true : false,
-              child: const AddNoteForm(),
+              child: const SingleChildScrollView(child: AddNoteForm()),
             );
           },
         ),
