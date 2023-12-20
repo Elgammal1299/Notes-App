@@ -3,9 +3,11 @@ import 'package:flutter_application_1/constants.dart';
 
 class CustomBottom extends StatelessWidget {
   final void Function()? onPressed;
+  final bool isLoading;
   const CustomBottom({
     super.key,
     this.onPressed,
+    this.isLoading = false,
   });
 
   @override
@@ -21,11 +23,21 @@ class CustomBottom extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: const Text(
-          'Add',
-          style: TextStyle(
-              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-        ),
+        child: isLoading
+            ? const SizedBox(
+                height: 24,
+                width: 24,
+                child: CircularProgressIndicator(
+                  color: Colors.black,
+                ),
+              )
+            : const Text(
+                'Add',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
       ),
     );
   }
