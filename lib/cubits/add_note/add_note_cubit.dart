@@ -10,6 +10,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
   // bool isLoading = true;
   addNote(NoteModel note) async {
+    emit(AddNoteLoading());
     try {
       var notesBox = Hive.box<NoteModel>(kNotesBox);
       //كده انا حطيت البوكس بتاعي فى متغير عن طريق المتغير ده اقدر اعمل اى حاجة فى البوكس اخزن فيه او امسح منه وهكذا
